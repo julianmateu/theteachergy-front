@@ -69,7 +69,8 @@
                     <form class="flex flex-col sm:flex-row items-center justify-center mx-auto mb-6" @submit="submitForm">
                         <input class="mx-4 w-1/2 my-2 sm:w-2/5 py-3 px-6 rounded text-sm font-body bg-transparent border-white text-white border placeholder-white placeholder-opacity-100"
                                placeholder="Email" type="email" v-model="email">
-                        <button class="btn w-1/2 my-2 sm:w-auto btn-main">Sign up</button>
+                        <img v-if="loading" class="mx-2" src="@/assets/hourglass_top-24px.svg">
+                        <button class="btn mx-4 w-1/2 my-2 sm:w-auto btn-main">Sign up</button>
                     </form>
                 </div>
             </section>
@@ -97,6 +98,7 @@
         components: {},
         data() {
             return {
+                loading: false,
                 email: null,
                 features: [
                     {
@@ -142,11 +144,15 @@
         methods: {
             submitForm: async function(e) {
                 e.preventDefault();
+
+                this.loading = true;
                 await axios({
                     method: 'get',
                     mode: 'no-cors',
                     url: 'https://script.google.com/macros/s/AKfycbyqGUG15oGadOrWqtV86hs0DciXxgyalCVhN9lvrDfJUKSImKT5/exec?email=' + encodeURIComponent(this.email),
                 });
+                this.loading = false;
+                this.email = null;
             }
         }
     }
