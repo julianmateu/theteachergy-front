@@ -21,8 +21,8 @@
                                 <span class="text-red-600">save time</span>
                             </h1>
                             <p class="text-xl">The right content and the best way to show it</p>
-                            <div>
-                                <button class="btn btn-main my-4">E-Mail me when it is ready</button>
+                            <div class="my-4">
+                                <a class="btn btn-main" href="#Subscribe">E-Mail me when it is ready</a>
                             </div>
                         </div>
                     </div>
@@ -66,9 +66,9 @@
             <section id="Subscribe">
                 <div class="bg-gray-800 bg-opacity-25 py-4">
                     <h1>Get in touch with us!</h1>
-                    <form class="flex flex-col sm:flex-row items-center justify-center mx-auto mb-6">
+                    <form class="flex flex-col sm:flex-row items-center justify-center mx-auto mb-6" @submit="submitForm">
                         <input class="mx-4 w-1/2 my-2 sm:w-2/5 py-3 px-6 rounded text-sm font-body bg-transparent border-white text-white border placeholder-white placeholder-opacity-100"
-                               placeholder="Email">
+                               placeholder="Email" type="email" v-model="email">
                         <button class="btn w-1/2 my-2 sm:w-auto btn-main">Sign up</button>
                     </form>
                 </div>
@@ -89,13 +89,15 @@
 </template>
 
 <script>
-    import '@/assets/css/tailwind.css'
+    import '@/assets/css/tailwind.css';
+    import axios from 'axios';
 
     export default {
         name: 'App',
         components: {},
         data() {
             return {
+                email: null,
                 features: [
                     {
                         icon: 'books.webp',
@@ -135,6 +137,16 @@
                         text: 'Improve your lesson with your students feedback',
                     },
                 ],
+            }
+        },
+        methods: {
+            submitForm: async function(e) {
+                e.preventDefault();
+                await axios({
+                    method: 'get',
+                    mode: 'no-cors',
+                    url: 'https://script.google.com/macros/s/AKfycbyqGUG15oGadOrWqtV86hs0DciXxgyalCVhN9lvrDfJUKSImKT5/exec?email=' + encodeURIComponent(this.email),
+                });
             }
         }
     }
