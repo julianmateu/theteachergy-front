@@ -3,3 +3,12 @@ image:
 
 tasks:
   - init: npm install && npm run build
+    command: npm run serve
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - octref.vetur@0.25.0:UofirBhedyhdx/jCnPeJDg==
