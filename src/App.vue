@@ -1,24 +1,24 @@
 <template>
     <div id="app flex flex-col bg-green-200">
         <header id="Header">
-            <section id="VideoBackground" style="height: 640px;">
+            <section id="VideoBackground" style="height: 550px;">
                 <video autoplay loop muted ref="video">
                     <source :src="require('@/assets/video.mp4')" type="video/mp4">
                 </video>
                 <div id="VideoBackgroundContent">
                     <div class="container mx-auto h-full">
-                        <div class="container text-center mt-2 mb-4">
-                            <img src="@/assets/logo.jpeg" class="w-8 inline-block align-middle">
-                            <h1 class="text-xl text-white inline-block align-middle px-2">The Teachergy</h1>
+                        <div class="container text-left mt-2 mb-4 px-4">
+                            <img src="@/assets/logo.jpeg" class="w-8 inline-block align-center">
+                            <h1 class="text-xl text-white inline-block align-center px-2">The Teachergy</h1>
                         </div>
                         <div class="container mx-auto">
                             <hr class="gradient">
                         </div>
                         <div class="px-4 sm:px-24 flex flex-col mx-auto text-white text-left h-full justify-center flex-initial">
                             <h1 class="text-3xl sm:text-5xl">Create
-                                <span class="text-red-600">engaging</span>
+                                <span class="text-green-300">engaging</span>
                                 classes and
-                                <span class="text-red-600">save time</span>
+                                <span class="text-green-300">save time</span>
                             </h1>
                             <p class="text-xl">The right content and the best way to show it</p>
                             <div class="my-4">
@@ -30,6 +30,12 @@
             </section>
         </header>
         <div class="body">
+         <section id="Introduction" class="bg-gray-300">
+                <p class="font-title text-gray-700 text-xl text-center pt-2 pb-0">You know your students, we have the material and tools.</p>
+                <p class="font-title text-main text-4xl text-center py-0">Let's work together!</p>
+
+            </section>
+            
             <section id="About">
                 <h1>How we'll help you</h1>
                 <div class="container mx-auto">
@@ -45,7 +51,14 @@
                     </li>
                 </ul>
             </section>
-            <section id="Content" class="bg-gray-100">
+            <section id="Text" class="bg-gray-300">
+                <p class="font-title text-gray-700 text-xl text-center pt-2 pb-0">Give your classes a turn with Teachergy.<br> 
+                <p class="text-gray-700 mx-10 text-center"><b>Build effective, dynamic and fun lessons!</b> <br>
+                We'll help you choose the best content available, add your explanations and include activities with your students!<br>
+                Simple and in just minutes!</p>
+                
+            </section>
+            <section id="Content">
                 <h1>4-step lesson creation</h1>
                 <div class="container mx-auto">
                     <hr class="w-1/5 mx-auto h-12">
@@ -212,18 +225,18 @@
 
     #VideoBackgroundContent {
         text-align: center;
-        @apply bg-gray-800 bg-opacity-75;
+        @apply bg-gray-900 bg-opacity-75;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 640px;
+        height: 550px;
     }
 
     #VideoBackground {
         position: relative;
         background-size: cover;
-        background-position: center;
+        background-position: top;
         overflow: hidden;
     }
 
