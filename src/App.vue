@@ -22,7 +22,7 @@
                             </h1>
                             <p class="text-xl">The right content and the best way to show it</p>
                             <div class="my-4">
-                                <a class="btn btn-main" href="#Subscribe">E-Mail me when it is ready</a>
+                                <a class="btn btn-main" onclick="ga('send', 'event', 'landing', 'click', 'email me when ready')" href="#Subscribe">E-Mail me when it is ready</a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <input class="mx-4 w-1/2 my-2 sm:w-2/5 py-3 px-6 rounded text-sm font-body bg-transparent border-white text-white border placeholder-white placeholder-opacity-100"
                                placeholder="Email" type="email" v-model="email">
                         <img v-if="loading" class="mx-2" src="@/assets/hourglass_top-24px.svg">
-                        <button class="btn mx-4 w-1/2 my-2 sm:w-auto btn-main">Sign up</button>
+                        <button class="btn mx-4 w-1/2 my-2 sm:w-auto btn-main"  onclick="ga('send', 'event', 'landing', 'click', 'sign up')">Sign up</button>
                     </form>
                 </div>
             </section>
