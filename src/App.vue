@@ -14,14 +14,14 @@
                         <div class="container mx-auto">
                             <hr class="gradient">
                         </div>
-                        <div class="px-4 sm:px-24 flex flex-col mx-auto text-white text-left h-full justify-center flex-initial">
-                            <h1 class="text-3xl sm:text-5xl">Create
+                        <div class="px-4 sm:px-24 flex flex-col mx-auto text-white text-left h-full justify-center flex-initial text-center">
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl my-6 xl:mx-24">Create
                                 <span class="text-red-600">engaging</span>
                                 classes and
                                 <span class="text-red-600">save time</span>
                             </h1>
-                            <p class="text-xl">The right content and the best way to show it</p>
-                            <div class="my-4">
+                            <p class="text-xl my-6">The right content and the best way to show it</p>
+                            <div class="my-6">
                                 <a class="btn btn-main" onclick="ga('send', 'event', 'landing', 'click', 'email me when ready')" href="#Subscribe">E-Mail me when it is ready</a>
                             </div>
                         </div>
@@ -30,35 +30,48 @@
             </section>
         </header>
         <div class="body">
-            <section id="About">
-                <h1>How we'll help you</h1>
+            <section id="Introduction" class="bg-gray-200">
+                <div class="container mx-auto">
+                    <h1>You know your students, we have the material and tools. Let's work together!</h1>
+                    <p class="text-center text-2xl text-gray-600">Give your classes a turn with Teachergy. Build effective, dynamic and fun lessons!</p>
+                </div>
+            </section>
+            <section id="Features">
+                <h1>Features</h1>
                 <div class="container mx-auto">
                     <hr class="w-1/5 mx-auto h-12">
                 </div>
-                <ul class="container flex mx-auto items-center text-center justify-center flex-wrap">
+                <ul class="container flex mx-auto items-start text-center justify-center flex-wrap">
                     <li v-for="(feature, index) in features" v-bind:key="index"
-                        class="w-full p-2 sm:w-1/2 sm:p-8 mx-auto">
+                        class="w-full p-4 sm:w-1/2 lg:w-1/4 mx-auto">
                         <img :src="require(`@/assets/${feature.icon}`)"
-                             class="center w-32 sm:w-48 rounded-full mx-auto"/>
-                        <h2>{{feature.title}}</h2>
-                        <p class="text-gray-600 mx-16">{{feature.text}}</p>
+                             class="center w-32 rounded-full mx-auto"/>
+                        <h2 class="font-title text-main text-2xl">{{feature.title}}</h2>
+                        <p class="text-gray-800 mx-2 text-xl">{{feature.text}}</p>
                     </li>
                 </ul>
             </section>
-            <section id="Content" class="bg-gray-100">
-                <h1>4-step lesson creation</h1>
+            <section id="Paragraph" class="bg-gray-200">
+                <div class="container mx-auto">
+                    <p class="text-center text-2xl text-gray-600">We'll help you choose the best content available, add your explanations and include activities with your students!</p>
+                    <h1>Simple and in just minutes!</h1>
+                </div>
+            </section>
+            <section id="How_it_works">
+                <h1>How it works</h1>
                 <div class="container mx-auto">
                     <hr class="w-1/5 mx-auto h-12">
                 </div>
                 <div class="container mx-auto">
                     <div class="flex flex-col sm:flex-row w-full items-center">
-                        <div class="w-full sm:w-1/3 container px-4">
-                            <img src="@/assets/book-tree.webp" class="center mx-auto"/>
+                        <div class="w-full sm:w-1/2 container px-4">
+                            <img src="@/assets/web_4_step_lesson_creation.jpg" class="center mx-auto" style="width: 28rem"/>
                         </div>
-                        <ol class="w-full sm:w-2/3 px-8">
-                            <li v-for="(step, index) in steps" v-bind:key="index">
-                                <h2>{{index + 1}} - {{step.text}}</h2>
+                        <ol class="w-full sm:w-1/2 px-8">
+                            <li v-for="(step, index) in steps" v-bind:key="index" class="text-2xl my-8">
+                                <h2><span class="text-main font-title text-3xl inline-block align-middle">{{index + 1}}</span> {{step.text}}</h2>
                             </li>
+                            <li class="text-main font-title text-2xl my-8">Your class is ready!</li>
                         </ol>
                     </div>
                 </div>
@@ -102,24 +115,24 @@
                 email: null,
                 features: [
                     {
-                        icon: 'books.webp',
-                        title: 'Highly ranked contents',
-                        text: 'Reviewed content to make your class more effective.',
+                        icon: 'web_Reviewed_material.jpg',
+                        title: 'Reviewed material',
+                        text: 'After analyzing +1000 videos we\'ll give you just a few great options.',
                     },
                     {
-                        icon: 'laptop.webp',
-                        title: 'Use Tech in a wise way',
-                        text: 'Create dynamic interactions using students\' devices.',
+                        icon: 'web_Add_your_explanation.jpg',
+                        title: 'Add your explanation',
+                        text: 'Easy to use editor to include your voice, videos and slides.',
                     },
                     {
-                        icon: 'library.webp',
+                        icon: 'web_Interactions_with_students.jpg',
+                        title: 'Interactions with students',
+                        text: 'The best engaging tools available! From quizzes to games, whatever is suitable for your audience.',
+                    },
+                    {
+                        icon: 'web_Continuous_improvement.jpg',
                         title: 'Continuous improvement',
-                        text: 'Track what works well for your audience.',
-                    },
-                    {
-                        icon: 'kids.webp',
-                        title: 'Access to our community',
-                        text: 'Surf a content library ranked by students.',
+                        text: 'Give the type of lessons your students value the most.',
                     },
                 ],
                 steps: [
@@ -127,16 +140,13 @@
                         text: 'Tell us what you have to teach',
                     },
                     {
-                        text: 'Tell us what you have to teach',
+                        text: 'Choose featured content',
                     },
                     {
-                        text: 'Mix your style with our suggestions (content, other classes, etc)',
+                        text: 'Include your explanation in a simple way',
                     },
                     {
-                        text: 'Give your lesson and interact with your students',
-                    },
-                    {
-                        text: 'Improve your lesson with your students feedback',
+                        text: 'Make it interactive!',
                     },
                 ],
             }
@@ -168,11 +178,11 @@
     }
 
     .body section h1 {
-        @apply text-4xl text-main text-center py-8;
+        @apply text-4xl text-main text-center py-2;
     }
 
     .body section {
-        @apply py-4;
+        @apply py-8;
     }
 
     #Subscribe {
@@ -182,10 +192,6 @@
 
     #Subscribe h1 {
         @apply text-white py-4;
-    }
-
-    h2 {
-        @apply text-xl my-3;
     }
 
     p {
