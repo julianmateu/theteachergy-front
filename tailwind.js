@@ -19,9 +19,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        main: '#2ea68f',
-        button: '#34bba1',
-        hover: '#3ed9bb',
+        main: '#38A168',
+        button: '#68D391',
+        hover: '#48BB78',
       },
       spacing: {
         '96': '24rem',
