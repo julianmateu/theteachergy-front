@@ -1,7 +1,7 @@
 <template>
     <div id="app flex flex-col bg-green-200">
         <header id="Header">
-            <section id="VideoBackground" style="height: 550px;">
+            <section id="VideoBackground" style="height: 600px;">
                 <video autoplay loop muted ref="video">
                     <source :src="require('@/assets/video.mp4')" type="video/mp4">
                 </video>
