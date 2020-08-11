@@ -1,28 +1,27 @@
 <template>
     <div id="app flex flex-col bg-green-200">
         <header id="Header">
-            <section id="VideoBackground" style="height: 640px;">
+            <section id="VideoBackground" style="height: 600px;">
                 <video autoplay loop muted ref="video">
                     <source :src="require('@/assets/video.mp4')" type="video/mp4">
                 </video>
                 <div id="VideoBackgroundContent">
                     <div class="container mx-auto h-full">
-                        <div class="container text-center mt-2 mb-4">
-                            <img src="@/assets/logo.jpeg" class="w-8 inline-block align-middle">
-                            <h1 class="text-xl text-white inline-block align-middle px-2">The Teachergy</h1>
+                        <div class="container text-center mt-2 mb-1">
+                            <h1 class="text-xl text-white inline-block align-middle">The Teachergy</h1>
                         </div>
                         <div class="container mx-auto">
                             <hr class="gradient">
                         </div>
-                        <div class="px-4 sm:px-24 flex flex-col mx-auto text-white text-left h-full justify-center flex-initial text-center">
-                            <h1 class="text-3xl sm:text-4xl lg:text-5xl my-6 xl:mx-24">Create
-                                <span class="text-red-600">engaging</span>
-                                classes and
-                                <span class="text-red-600">save time</span>
+                        <div class="px-4 sm:px-4 flex flex-col mx-auto text-white text-left h-full flex-initial text-center">
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl md:text-5xl xl:text-6xl my-24 xs:my-10 sm:my-14">Create
+                                <span class="text-main">engaging</span>
+                                classes
+                                <br>and <span class="text-main">save time</span>
                             </h1>
-                            <p class="text-xl my-6">The right content and the best way to show it</p>
+                            <p class="text-xl sm:text-l lg:text-2xl sm:mx-0 pb-4 -my-4 xs:-my-12">The right content and the best way to show it</p>
                             <div class="my-6">
-                                <a class="btn btn-main" onclick="ga('send', 'event', 'landing', 'click', 'email me when ready')" href="#Subscribe">E-Mail me when it is ready</a>
+                                <a class="btn btn-main" onclick="ga('send', 'event', 'landing', 'click', 'create a class')" href="#Subscribe">Create a class</a>
                             </div>
                         </div>
                     </div>
@@ -31,13 +30,13 @@
         </header>
         <div class="body">
             <section id="Introduction" class="bg-gray-200">
-                <div class="container mx-auto">
-                    <h1>You know your students, we have the material and tools. Let's work together!</h1>
-                    <p class="text-center text-2xl text-gray-600">Give your classes a turn with Teachergy. Build effective, dynamic and fun lessons!</p>
+                <div class="container mx-auto py-0 px-2">
+                    <h2 class="text-2xl lg:text-3xl text-main font-title text-center align-middle px-2">You know your students, we have the material and tools. <br> Let's work together!</h2>
+                    <p class="text-center text-xl lg:text-2xl pt-2 text-gray-600">Give your classes a turn with <b>The Teachergy</b>. Build effective, dynamic and fun lessons.</p>
                 </div>
             </section>
             <section id="Features">
-                <h1>Features</h1>
+                <h1 class="section-title text-main">Features</h1>
                 <div class="container mx-auto">
                     <hr class="w-1/5 mx-auto h-12">
                 </div>
@@ -45,45 +44,45 @@
                     <li v-for="(feature, index) in features" v-bind:key="index"
                         class="w-full p-4 sm:w-1/2 lg:w-1/4 mx-auto">
                         <img :src="require(`@/assets/${feature.icon}`)"
-                             class="center w-32 rounded-full mx-auto"/>
-                        <h2 class="font-title text-main text-2xl">{{feature.title}}</h2>
+                             class="center w-32 rounded-full mx-auto mb-4"/>
+                        <h2 class="font-title text-main text-2xl mx-4 xl:mx-6">{{feature.title}}</h2>
                         <p class="text-gray-800 mx-2 text-xl">{{feature.text}}</p>
                     </li>
                 </ul>
             </section>
             <section id="Paragraph" class="bg-gray-200">
-                <div class="container mx-auto">
-                    <p class="text-center text-2xl text-gray-600">We'll help you choose the best content available, add your explanations and include activities with your students!</p>
-                    <h1>Simple and in just minutes!</h1>
+                <div class="container mx-auto px-2">
+                    <p class="text-center text-xl lg:text-2xl text-gray-600 lg:mx-20">We'll help you choose the best content available, add your explanations and include activities with your students.</p>
+                    <h2 class="text-xl lg:text-3xl text-main font-title text-center align-middle">Simple and in just minutes</h2>
                 </div>
             </section>
             <section id="How_it_works">
-                <h1>How it works</h1>
+                <h1 class="section-title text-main">How it works</h1>
                 <div class="container mx-auto">
                     <hr class="w-1/5 mx-auto h-12">
                 </div>
                 <div class="container mx-auto">
                     <div class="flex flex-col sm:flex-row w-full items-center">
                         <div class="w-full sm:w-1/2 container px-4">
-                            <img src="@/assets/web_4_step_lesson_creation.jpg" class="center mx-auto" style="width: 28rem"/>
+                            <img src="@/assets/web_4_step_lesson_creation.jpg" class="center mx-auto " style="width: 24rem"/>
                         </div>
                         <ol class="w-full sm:w-1/2 px-8">
-                            <li v-for="(step, index) in steps" v-bind:key="index" class="text-2xl my-8">
-                                <h2><span class="text-main font-title text-3xl inline-block align-middle">{{index + 1}}</span> {{step.text}}</h2>
+                            <li v-for="(step, index) in steps" v-bind:key="index" class="text-3xl my-6 allign-top">
+                                <h2 class="text-xl md:text-2xl lg:text-3xl"><span class="text-main font-title lg:text-3xl md:text-2xl sm:text-xl xs:text-l inline-block align-middle">{{index + 1}}</span> {{step.text}}</h2>
                             </li>
-                            <li class="text-main font-title text-2xl my-8">Your class is ready!</li>
+                            <li class="text-main font-title text-xl md:text-2xl lg:text-3xl my-8">Your class is ready!</li>
                         </ol>
                     </div>
                 </div>
             </section>
             <section id="Subscribe">
-                <div class="bg-gray-800 bg-opacity-25 py-4">
-                    <h1>Get in touch with us!</h1>
+                <div class="bg-gray-700 bg-opacity-75 py-4">
+                    <h1 class="section-title text-white">Join our early adopters community.<br> Save time but also money!</h1>
                     <form class="flex flex-col sm:flex-row items-center justify-center mx-auto mb-6" @submit="submitForm">
                         <input class="mx-4 w-1/2 my-2 sm:w-2/5 py-3 px-6 rounded text-sm font-body bg-transparent border-white text-white border placeholder-white placeholder-opacity-100"
                                placeholder="Email" type="email" v-model="email">
                         <img v-if="loading" class="mx-2" src="@/assets/hourglass_top-24px.svg">
-                        <button class="btn mx-4 w-1/2 my-2 sm:w-auto btn-main"  onclick="ga('send', 'event', 'landing', 'click', 'sign up')">Sign up</button>
+                        <button class="btn mx-4 w-1/2 my-2 sm:w-auto btn-main"  onclick="ga('send', 'event', 'landing', 'click', 'sign up')">Get started</button>
                     </form>
                 </div>
             </section>
@@ -93,7 +92,7 @@
                 <div class="flex flex-col text-center py-8 justify-between">
                     <div class="container">
                         <img src="@/assets/logo.jpeg" class="w-6 inline-block align-middle">
-                        <h1 class="text-white inline-block align-middle px-2">The Teachergy</h1>
+                        <h1 class="text-white inline-block align-middle pt-1 px-2">The Teachergy</h1>
                     </div>
                     <p class="text-gray-600 py-4">Copyright © 2020 The Teachergy - All Rights Reserved.</p>
                 </div>
@@ -137,7 +136,7 @@
                 ],
                 steps: [
                     {
-                        text: 'Tell us what you have to teach',
+                        text: 'Tell us what you teach',
                     },
                     {
                         text: 'Choose featured content',
@@ -146,7 +145,7 @@
                         text: 'Include your explanation in a simple way',
                     },
                     {
-                        text: 'Make it interactive!',
+                        text: 'Make it interactive',
                     },
                 ],
             }
@@ -177,21 +176,17 @@
         @apply font-body;
     }
 
-    .body section h1 {
-        @apply text-4xl text-main text-center py-2;
+    .section-title {
+        @apply text-4xl text-center p-2;
     }
 
     .body section {
-        @apply py-8;
+        @apply py-6;
     }
 
     #Subscribe {
         @apply bg-no-repeat bg-left bg-cover bg-center text-white py-0;
         background-image: url("./assets/hands.webp");
-    }
-
-    #Subscribe h1 {
-        @apply text-white py-4;
     }
 
     p {
@@ -205,11 +200,11 @@
     }
 
     .btn {
-        @apply font-bold py-3 px-6 rounded uppercase;
+        @apply py-3 px-6 rounded uppercase;
     }
 
     .btn-main {
-        @apply bg-main text-black text-sm font-black;
+        @apply bg-main text-white font-black text-xl;
     }
 
     .btn-main:hover {

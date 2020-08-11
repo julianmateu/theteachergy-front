@@ -20,7 +20,7 @@ module.exports = {
     extend: {
       colors: {
         main: '#2ea68f',
-        button: '#34bba1',
+        button: '#2ea68f',
         hover: '#3ed9bb',
       },
       spacing: {
