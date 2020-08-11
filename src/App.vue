@@ -1,25 +1,25 @@
 <template>
     <div id="app flex flex-col bg-green-200">
         <header id="Header">
-            <section id="VideoBackground" style="height: 600px;">
+            <section id="VideoBackground" style="height: 550px;">
                 <video autoplay loop muted ref="video">
                     <source :src="require('@/assets/video.mp4')" type="video/mp4">
                 </video>
                 <div id="VideoBackgroundContent">
                     <div class="container mx-auto h-full">
-                        <div class="container text-center mx-8 mt-2 mb-1">
-                            <h1 class="text-xl text-white inline-block align-middle px-2">The Teachergy</h1>
+                        <div class="container text-center mt-2 mb-1">
+                            <h1 class="text-xl text-white inline-block align-middle">The Teachergy</h1>
                         </div>
                         <div class="container mx-auto">
                             <hr class="gradient">
                         </div>
                         <div class="px-4 sm:px-4 flex flex-col mx-auto text-white text-left h-full flex-initial text-center">
-                            <h1 class="text-3xl sm:text-4xl lg:text-5xl md:text-5xl xl:text-6xl my-16 ">Create
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl md:text-5xl xl:text-6xl my-24 xs:my-10 sm:my-14">Create
                                 <span class="text-main">engaging</span>
                                 classes
                                 <br>and <span class="text-main">save time</span>
                             </h1>
-                            <p class="text-xl sm:text-l lg:text-2xl sm:mx-0 pb-4 my-0">The right content and the best way to show it</p>
+                            <p class="text-xl sm:text-l lg:text-2xl sm:mx-0 pb-4 -my-4 xs:-my-12">The right content and the best way to show it</p>
                             <div class="my-6">
                                 <a class="btn btn-main" onclick="ga('send', 'event', 'landing', 'click', 'create a class')" href="#Subscribe">Create a class</a>
                             </div>
@@ -92,7 +92,7 @@
                 <div class="flex flex-col text-center py-8 justify-between">
                     <div class="container">
                         <img src="@/assets/logo.jpeg" class="w-6 inline-block align-middle">
-                        <h1 class="text-white inline-block align-middle px-2">The Teachergy</h1>
+                        <h1 class="text-white inline-block align-middle pt-1 px-2">The Teachergy</h1>
                     </div>
                     <p class="text-gray-600 py-4">Copyright © 2020 The Teachergy - All Rights Reserved.</p>
                 </div>
