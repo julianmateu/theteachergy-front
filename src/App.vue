@@ -95,7 +95,7 @@
                         <img src="@/assets/logo.jpeg" class="w-6 inline-block align-middle">
                         <h1 class="text-white inline-block align-middle pt-1 px-2">The Teachergy</h1>
                     </div>
-                    <p class="text-gray-600 py-4">Copyright © 2020 The Teachergy - All Rights Reserved.</p>
+                    <p class="text-gray-600 py-4">Copyright© 2020 The Teachergy - All Rights Reserved.</p>
                 </div>
             </div>
         </footer>
