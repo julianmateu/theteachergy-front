@@ -78,7 +78,7 @@
             </section>
             <section id="Subscribe">
                 <div class="bg-gray-700 bg-opacity-75 py-4">
-                    <h1 class="section-title text-white">Join our early adopters community.<br> Save time but also money!</h1>
+                    <p class="font-title text-2xl text-white text-center p-2 sm:text-4xl">Join our early adopters community.<br> Save time but also money!</p>
                     <form class="flex flex-col sm:flex-row items-center justify-center mx-auto mb-6" @submit="submitForm">
                         <input class="mx-4 w-1/2 my-2 sm:w-2/5 py-3 px-6 rounded text-sm font-body bg-transparent border-white text-white border placeholder-white placeholder-opacity-100"
                                placeholder="Email" type="email" v-model="email">
@@ -186,7 +186,7 @@
     }
 
     #Subscribe {
-        @apply bg-no-repeat bg-left bg-cover bg-center text-white py-0;
+        @apply bg-no-repeat bg-left bg-cover bg-center text-white py-0 text-4xl;
         background-image: url("./assets/hands.webp");
     }
 
