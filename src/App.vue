@@ -5,6 +5,7 @@
                 <video autoplay loop muted ref="video">
                     <source :src="require('@/assets/video.mp4')" type="video/mp4">
                 </video>
+<!--This is a comment. Comments are not displayed in the browser--> 
                 <div id="VideoBackgroundContent">
                     <div class="container mx-auto h-full">
                         <div class="container text-center mt-2 mb-1">
