@@ -186,7 +186,7 @@
     }
 
     #Subscribe {
-        @apply bg-no-repeat bg-left bg-cover bg-center text-white py-0 text-4xl;
+        @apply bg-no-repeat bg-left bg-cover bg-center text-white py-0;
         background-image: url("./assets/hands.webp");
     }
 
