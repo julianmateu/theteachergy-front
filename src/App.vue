@@ -219,7 +219,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 640px;
+        height: 600px;
     }
 
     #VideoBackground {
