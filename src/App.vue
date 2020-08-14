@@ -215,6 +215,7 @@
         text-align: center;
         @apply bg-gray-800 bg-opacity-75;
         position: absolute;
+        -webkit-transform: translate3d(0, 0, 0);
         top: 0;
         left: 0;
         width: 100%;
@@ -223,8 +224,7 @@
 
     #VideoBackground {
         position: relative;
-        top: 0;
-        left: 0;
+        -webkit-transform: translate3d(0, 0, 0);
         background-size: cover;
         background-position: center;
         overflow: hidden;
