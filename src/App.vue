@@ -1,140 +1,162 @@
 <template>
-    <div id="app flex flex-col bg-green-200">
-        <header id="Header">
-            <section id="head" style="height: 600px;">
-                <div id="head">
-                </div>
-            </section>
-        </header>
-        <div class="body">
-            <section id="Introduction" class="bg-gray-200">
-                <div class="container mx-auto py-0 px-2">
-                  <div class="" id="setup">
-                    <form action="/create_class.html">
-                        <label for="fname">What do you want to teach?</label>
-                        <input type="text" id="fname" name="fname"><br><br>
-                        <label for="lname">What is the age of the audience?</label>
-                        <input type="text" id="lname" name="lname"><br><br>
-                        <p>Please select the type of class:</p>
-                        <input type="radio" id="sync" name="type" value="sync">
-                        <label for="sync">sync</label><br>
-                        <input type="radio" id="async" name="type" value="async">
-                        <label for="async">async</label><br>
-                        <input type="radio" id="other" name="type" value="other">
-                        <label for="other">Other</label>
-                        <br>
-                        <input type="submit" value="Submit">
+	<div id="app flex flex-col bg-green-200">
+		<header id="Header">
+			<section id="head" style="height: 600px;">
+				<div id="head">
+				</div>
+			</section>
+		</header>
+		<div class="body">
+
+			<section id="Features">
+				<h1 class="section-title text-main">Features</h1>
+				<div class="container mx-auto">
+					<hr class="w-1/5 mx-auto h-12">
+				</div>
+				<ul class="container flex mx-auto items-start text-center justify-center flex-wrap">
+					<li v-for="(feature, index) in features" v-bind:key="index"
+						class="w-full p-4 sm:w-1/2 lg:w-1/4 mx-auto">
+						<img :src="require(`@/assets/${feature.icon}`)"
+                             class="center w-32 rounded-full mx-auto mb-4"/>
+						<h2 class="font-title text-main text-2xl mx-4 xl:mx-6">{{feature.title}}</h2>
+						<p class="text-gray-800 mx-2 text-xl">{{feature.text}}</p>
+					</li>
+				</ul>
+			</section>
+
+			<section id="Introduction" class="bg-gray-200">
+				<h1 class="section-title text-main">Create your class!</h1>
+				<div class="container mx-auto">
+					<hr class="w-1/5 mx-auto h-12">
+				</div>
+				<div class="container mx-auto" id="setup">
+					<form action="/create_class.html" class="mx-auto ">
+						<label for="fname">What do you want to teach?</label>
+						<input type="text" id="fname" name="fname"><br><br>
+						<label for="lname">What is the age of the audience?</label>
+						<input type="text" id="lname" name="lname"><br><br>
+						<p>Please select the type of class:</p>
+						<input type="radio" id="sync" name="type" value="sync">
+						<label for="sync">sync</label><br>
+						<input type="radio" id="async" name="type" value="async">
+						<label for="async">async</label><br>
+						<input type="radio" id="other" name="type" value="other">
+						<label for="other">Other</label>
+						<br>
+						<input type="submit" value="Submit">
                     </form>
-                </div>    
+				</div>
+			</section>
+			<section>
+				<div class="" id="template_class">
 
-                 <div class="" id="template_class">
-                    
-                    <ul id="available_template">
-                        <li>
-                            <ul id="template1">
-                                <li>Introduction</li>
-                                <li>Core theory</li>
-                                <li>Exercises</li>
-                                <li>Conclusion</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <ul id="template2">
-                                <li>Introduction</li>
-                                <li>Core theory</li>
-                                <li>Conclusion</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <br>
-                    <form action="/create_class.html">
-                        <input type="submit" value="Submit">
+					<ul id="available_template">
+						<li>
+							<ul id="template1">
+								<li>Introduction</li>
+								<li>Core theory</li>
+								<li>Exercises</li>
+								<li>Conclusion</li>
+							</ul>
+						</li>
+						<li>
+							<ul id="template2">
+								<li>Introduction</li>
+								<li>Core theory</li>
+								<li>Conclusion</li>
+							</ul>
+						</li>
+					</ul>
+					<br>
+					<form action="/create_class.html">
+						<input type="submit" value="Submit">
                     </form>
-                </div>  
-                 <div class="" id="class">
-
-                   
-                        <h2>Introduction</h2>
-                            <ul id="template1introduction">
-                                <li>aa</li>
-                                <li>bb</li>
-                                <li>cc</li>
-                                <li><button>+</button></li>
-                            </ul>
-                        <h2>Core theory</h2>
-                            <ul id="template2 introduction">
-                                <li>dd</li>
-                                <li>ee</li>
-                                <li>ff</li>
-                                <li><button>+</button></li>
-                            </ul>
-                        <h2>Exercises</h2>
-                            <ul id="template1-introduction">
-                                <li>gg</li>
-                                <li>hh</li>
-                                <li>ii</li>
-                                <li><button>+</button></li>
-                            </ul>
-                        <h2>Conclusion</h2>
-                            <ul id="template1-introduction">
-                                <li>jj</li>
-                                <li>kk</li>
-                                <li>ll</li>
-                                <li><button>+</button></li>
-                            </ul>
+				</div>
+				<div class="" id="class">
 
 
-            </div>  
-                <div class="" id="class">
-                    <form action="/create_class.html">
-                        <label for="fname">What do you want to teach?</label>
-                        <input type="text" id="fname" name="fname"><br><br>
-                    </form>                       
-                    <h2>Select your source of content:</h2>
-                       <ul id="Source_Content">
-                            <li><h3>Google</h3>
-                                <ul id="template1-introduction">
-                                    <li><button>aa</button></li>
-                                    <li><button>bb</button></li>
-                                    <li><button>cc</button></li>
-                                </ul>
-                            </li>
-                            <li><h3>Youtube</h3>
-                                <ul id="template1-introduction">
-                                    <li><button>dd</button></li>
-                                    <li><button>ee</button></li>
-                                    <li><button>ff</button></li>
-                                </ul>
-                            </li>
-                            <li><h3>Wikipedia</h3>
-                                <ul id="template1-introduction">
-                                    <li><button>gg</button></li>
-                                    <li><button>hh</button></li>
-                                    <li><button>ii</button></li>
-                                </ul>
-                            </li>
-                            <li><h3>Record yourself</h3>
-                                <ul id="template1-introduction">
-                                    <li><button>+</button></li>
-                                </ul>
-                            </li>
-                    </ul>
-                    <br>
-                    <form action="/create_class.html">
-                        <input type="submit" value="Submit">
+					<h2>Introduction</h2>
+					<ul id="template1introduction">
+						<li>aa</li>
+						<li>bb</li>
+						<li>cc</li>
+						<li><button>+</button></li>
+					</ul>
+					<h2>Core theory</h2>
+					<ul id="template2 introduction">
+						<li>dd</li>
+						<li>ee</li>
+						<li>ff</li>
+						<li><button>+</button></li>
+					</ul>
+					<h2>Exercises</h2>
+					<ul id="template1-introduction">
+						<li>gg</li>
+						<li>hh</li>
+						<li>ii</li>
+						<li><button>+</button></li>
+					</ul>
+					<h2>Conclusion</h2>
+					<ul id="template1-introduction">
+						<li>jj</li>
+						<li>kk</li>
+						<li>ll</li>
+						<li><button>+</button></li>
+					</ul>
+
+
+				</div>
+				<div class="" id="class">
+					<form action="/create_class.html">
+						<label for="fname">What do you want to teach?</label>
+						<input type="text" id="fname" name="fname"><br><br>
                     </form>
-                </div>  
+						<h2>Select your source of content:</h2>
+						<ul id="Source_Content">
+							<li>
+								<h3>Google</h3>
+								<ul id="template1-introduction">
+									<li><button>aa</button></li>
+									<li><button>bb</button></li>
+									<li><button>cc</button></li>
+								</ul>
+							</li>
+							<li>
+								<h3>Youtube</h3>
+								<ul id="template1-introduction">
+									<li><button>dd</button></li>
+									<li><button>ee</button></li>
+									<li><button>ff</button></li>
+								</ul>
+							</li>
+							<li>
+								<h3>Wikipedia</h3>
+								<ul id="template1-introduction">
+									<li><button>gg</button></li>
+									<li><button>hh</button></li>
+									<li><button>ii</button></li>
+								</ul>
+							</li>
+							<li>
+								<h3>Record yourself</h3>
+								<ul id="template1-introduction">
+									<li><button>+</button></li>
+								</ul>
+							</li>
+						</ul>
+						<br>
+						<form action="/create_class.html">
+							<input type="submit" value="Submit">
+                    </form>
+				</div>
+			</section>
+		</div>
 
-                 </div>
-            </section>
-        </div>
 
-
-        <footer id="Footer" class="bg-black flex-grow">
-        </footer>
-    </div>
+		<footer id="Footer" class="bg-black flex-grow">
+		</footer>
+	</div>
 </template>
-
 <script>
     import '@/assets/css/tailwind.css';
     import axios from 'axios';
